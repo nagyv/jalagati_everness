@@ -27,16 +27,19 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile.custom.structure.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.custom.theme.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.custom.theme.min.css" /> -->
+        <link rel="stylesheet" href="css/jalagati.css">
+        <link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
         <title>Jalagati az Evernessen</title>
     </head>
     <body>
         <div id="joga" data-role="page">
-            <div data-role="header">Jógaalkalmak</div>
+            <header data-role="header" class="ui-btn ui-btn-active">
+                Jógaalkalmak
+            </header>
             <div role="main" class="ui-content">
-                <h2>Jóga a parton</h2>
-                <ul>
+                <ul data-role="listview">
+                    <li data-role="list-divider">Jóga a parton</li>
                     <li>Csütörtök 8:00, 18:00</li>
                     <li>Péntek 8:00, 18:00, 21:00</li>
                     <li>Szombat 8:00, 21:00</li>
@@ -46,19 +49,19 @@
             <footer data-role="footer" style="overflow:hidden;" data-position="fixed">
                 <nav data-role="navbar">
                     <ul>
-                        <li><a href="#joga">Jóga</a></li>
-                        <li><a href="#eloadas">Előadás</a></li>
-                        <li><a href="#rolunk">Rólunk</a></li>
+                        <li><a href="#joga" data-icon="heart" class="ui-btn-active">Jóga</a></li>
+                        <li><a href="#eloadas" data-icon="info">Előadás</a></li>
+                        <li><a href="#rolunk" data-icon="location">Rólunk</a></li>
                     </ul>
                 </nav>
             </footer>
         </div>
 
         <div id="eloadas" data-role="page">
-            <div data-role="header">Előadások</div>
+            <header data-role="header" class="ui-btn ui-btn-active">Előadások</header>
             <div role="main" class="ui-content">
-                <h2>A Jalagati Módszerről</h2>
-                <ul>
+                <ul data-role="listview">
+                    <li data-role="list-divider">A Jalagati Módszerről</li>
                     <li>Csütörtök 17:45, Napi elemózsia sátor</li>
                     <li>Péntek 9:30, Jalagati sátor</li>
                     <li>Szombat 9:30, Jalagati sátor</li>
@@ -68,30 +71,33 @@
             <footer data-role="footer" style="overflow:hidden;" data-position="fixed">
                 <nav data-role="navbar">
                     <ul>
-                        <li><a href="#joga">Jóga</a></li>
-                        <li><a href="#eloadas">Előadás</a></li>
-                        <li><a href="#rolunk">Rólunk</a></li>
+                        <li><a href="#joga" data-icon="heart">Jóga</a></li>
+                        <li><a href="#eloadas" data-icon="info" class="ui-btn-active">Előadás</a></li>
+                        <li><a href="#rolunk" data-icon="location">Rólunk</a></li>
                     </ul>
                 </nav>
             </footer>
         </div>
 
         <div id="rolunk" data-role="page">
-            <div data-role="header">Előadások</div>
+            <header data-role="header" class="ui-btn ui-btn-active">Rólunk</header>
             <div role="main" class="ui-content">
-                <h2>Jalagati Jóga Klub</h2>
-                <ul>
+                <ul data-role="listview">
+                    <li data-role="list-divider">Jalagati Jóga Klub</li>
                     <li><a href="http://jalagati.hu">jalagati.hu</a></li>
                     <li><a href="http://facebook.com/jalagatimodszer">fb/jalagatimodszer</a></li>
+                    <li data-role="list-divider">Jógaórák</li>
+                    <li>Budapesten a Király utcában</li>
+                    <li>és a Margit-szigeten.</li>
+                    <li>Szegeden a Takaréktár utcában.</li>
                 </ul>
-                <p>Jógaórák Pesten a Király utcában és a Margit-szigeten, Szegeden a központban.</p>
             </div>
             <footer data-role="footer" style="overflow:hidden;" data-position="fixed">
                 <nav data-role="navbar">
                     <ul>
-                        <li><a href="#joga">Jóga</a></li>
-                        <li><a href="#eloadas">Előadás</a></li>
-                        <li><a href="#rolunk">Rólunk</a></li>
+                        <li><a href="#joga" data-icon="heart">Jóga</a></li>
+                        <li><a href="#eloadas" data-icon="info">Előadás</a></li>
+                        <li><a href="#rolunk" data-icon="location" class="ui-btn-active">Rólunk</a></li>
                     </ul>
                 </nav>
             </footer>
