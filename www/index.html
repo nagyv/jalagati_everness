@@ -26,20 +26,84 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.custom.structure.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.custom.theme.min.css" />
+        <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css"> -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Jalagati az Evernessen</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        <div id="joga" data-role="page">
+            <div data-role="header">Jógaalkalmak</div>
+            <div role="main" class="ui-content">
+                <h2>Jóga a parton</h2>
+                <ul>
+                    <li>Csütörtök 8:00, 18:00</li>
+                    <li>Péntek 8:00, 18:00, 21:00</li>
+                    <li>Szombat 8:00, 21:00</li>
+                    <li>Vasárnap 8:00</li>
+                </ul>
             </div>
+            <footer data-role="footer" style="overflow:hidden;" data-position="fixed">
+                <nav data-role="navbar">
+                    <ul>
+                        <li><a href="#joga">Jóga</a></li>
+                        <li><a href="#eloadas">Előadás</a></li>
+                        <li><a href="#rolunk">Rólunk</a></li>
+                    </ul>
+                </nav>
+            </footer>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
+
+        <div id="eloadas" data-role="page">
+            <div data-role="header">Előadások</div>
+            <div role="main" class="ui-content">
+                <h2>A Jalagati Módszerről</h2>
+                <ul>
+                    <li>Csütörtök 17:45, Napi elemózsia sátor</li>
+                    <li>Péntek 9:30, Jalagati sátor</li>
+                    <li>Szombat 9:30, Jalagati sátor</li>
+                    <li>Vasárnap 9:30, Jalagati sátor</li>
+                </ul>
+            </div>
+            <footer data-role="footer" style="overflow:hidden;" data-position="fixed">
+                <nav data-role="navbar">
+                    <ul>
+                        <li><a href="#joga">Jóga</a></li>
+                        <li><a href="#eloadas">Előadás</a></li>
+                        <li><a href="#rolunk">Rólunk</a></li>
+                    </ul>
+                </nav>
+            </footer>
+        </div>
+
+        <div id="rolunk" data-role="page">
+            <div data-role="header">Előadások</div>
+            <div role="main" class="ui-content">
+                <h2>Jalagati Jóga Klub</h2>
+                <ul>
+                    <li><a href="http://jalagati.hu">jalagati.hu</a></li>
+                    <li><a href="http://facebook.com/jalagatimodszer">fb/jalagatimodszer</a></li>
+                </ul>
+                <p>Jógaórák Pesten a Király utcában és a Margit-szigeten, Szegeden a központban.</p>
+            </div>
+            <footer data-role="footer" style="overflow:hidden;" data-position="fixed">
+                <nav data-role="navbar">
+                    <ul>
+                        <li><a href="#joga">Jóga</a></li>
+                        <li><a href="#eloadas">Előadás</a></li>
+                        <li><a href="#rolunk">Rólunk</a></li>
+                    </ul>
+                </nav>
+            </footer>
+        </div>
+        
+        <!-- <script type="text/javascript" src="cordova.js"></script> -->
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <!-- <script src="js/jquery.mobile.custom.min.js"></script> -->
+        <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+        <script src="js/index.js"></script>
+        <script>
             app.initialize();
         </script>
     </body>
