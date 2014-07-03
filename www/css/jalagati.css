@@ -420,7 +420,9 @@ button[disabled],
 header.ui-btn {
 	margin-top: 0px;
 }
-.ui-listview li h2.title {
-	font-size: 2em;
+@media (min-width: 600px) {
+	.ui-listview li h2.title {
+		font-size: 2em;
+	}
 }
 			
