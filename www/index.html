@@ -26,7 +26,7 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.custom.structure.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.3.min.css" />
         <link rel="stylesheet" href="css/jalagati.css">
         <link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
         <title>Jalagati az Evernessen</title>
@@ -37,7 +37,7 @@
                 Jógaalkalmak
             </header>
             <div role="main" class="ui-content">
-                <ul data-role="listview">
+                <ul data-role="listview" data-inset="true">
                     <li data-role="list-divider">Jóga a parton</li>
                     <li>Csütörtök 8:00, 18:00</li>
                     <li>Péntek 8:00, 18:00, 21:00</li>
@@ -59,7 +59,7 @@
         <div id="eloadas" data-role="page">
             <header data-role="header" class="ui-btn ui-btn-active">Előadások</header>
             <div role="main" class="ui-content">
-                <ul data-role="listview">
+                <ul data-role="listview" data-inset="true">
                     <li data-role="list-divider">A Jalagati Módszerről</li>
                     <li>Csütörtök 17:45
                         <p>Napi elemózsia sátor</p></li>
@@ -85,8 +85,11 @@
         <div id="rolunk" data-role="page">
             <header data-role="header" class="ui-btn ui-btn-active">Rólunk</header>
             <div role="main" class="ui-content">
-                <ul data-role="listview">
-                    <li data-role="list-divider">Jalagati Jóga Klub</li>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider" class="ui-li-static">
+                        <img src="icon.png" alt="Jalagati Jóga Egyesület">
+                        <h2 class="title">Jalagati Jóga Klub</h2>
+                    </li>
                     <li><a href="http://jalagati.hu">jalagati.hu</a></li>
                     <li><a href="http://facebook.com/jalagatimodszer">fb/jalagatimodszer</a></li>
                     <li data-role="list-divider">Jógaórák</li>

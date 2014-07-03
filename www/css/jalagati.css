@@ -420,4 +420,7 @@ button[disabled],
 header.ui-btn {
 	margin-top: 0px;
 }
+.ui-listview li h2.title {
+	font-size: 2em;
+}
 			
