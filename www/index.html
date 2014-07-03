@@ -51,6 +51,7 @@
                         <li><a href="#joga" data-icon="heart" class="ui-btn-active">Jóga</a></li>
                         <li><a href="#eloadas" data-icon="info">Előadás</a></li>
                         <li><a href="#rolunk" data-icon="location">Rólunk</a></li>
+                        <li class="doDebug"><a href="#debug" data-icon="location">Debug</a></li>
                     </ul>
                 </nav>
             </footer>
@@ -77,6 +78,7 @@
                         <li><a href="#joga" data-icon="heart">Jóga</a></li>
                         <li><a href="#eloadas" data-icon="info" class="ui-btn-active">Előadás</a></li>
                         <li><a href="#rolunk" data-icon="location">Rólunk</a></li>
+                        <li class="doDebug"><a href="#debug" data-icon="location">Debug</a></li>
                     </ul>
                 </nav>
             </footer>
@@ -104,9 +106,19 @@
                         <li><a href="#joga" data-icon="heart">Jóga</a></li>
                         <li><a href="#eloadas" data-icon="info">Előadás</a></li>
                         <li><a href="#rolunk" data-icon="location" class="ui-btn-active">Rólunk</a></li>
+                        <li class="doDebug"><a href="#debug" data-icon="location">Debug</a></li>
                     </ul>
                 </nav>
             </footer>
+        </div>
+
+        <div id="debug" data-role="page">
+            <header data-role="header" class="ui-btn ui-btn-active" data-add-back-btn="true">Debug</header>
+            <div role="main" class="ui-content">
+                <div id="debug-content">Nope</div>
+                <ul data-role="listview" data-inset="true" id="debug-messages">
+                </ul>
+            </div>
         </div>
         
         <script type="text/javascript" src="cordova.js"></script>

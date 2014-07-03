@@ -17,7 +17,6 @@
  * under the License.
  */
 
-/*
 var PUSH_SENDER_ID = "";
 
 var pushNotification;
@@ -55,7 +54,7 @@ var pushHandler = {
 
     // Android
     onNotificationGCM: function (e) {
-        $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+        $("#debug-messages").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
 
         switch( e.event )
         {
@@ -74,7 +73,7 @@ var pushHandler = {
             // you might want to play a sound to get the user's attention, throw up a dialog, etc.
             if ( e.foreground )
             {
-                $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
+                $("#debug-messages").append('<li>--INLINE NOTIFICATION--' + '</li>');
 
                 // if the notification contains a soundname, play it.
                 var my_media = new Media("/android_asset/www/"+e.soundname);
@@ -84,30 +83,36 @@ var pushHandler = {
             {  // otherwise we were launched because the user touched a notification in the notification tray.
                 if ( e.coldstart )
                 {
-                    $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+                    $("#debug-messages").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
                 }
                 else
                 {
-                    $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+                    $("#debug-messages").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
                 }
             }
 
-            $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
-            $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+            $("#debug-messages").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+            $("#debug-messages").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
         break;
 
         case 'error':
-            $("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
+            $("#debug-messages").append('<li>ERROR -> MSG:' + e.msg + '</li>');
         break;
 
         default:
-            $("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+            $("#debug-messages").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
         break;
       }
     }
 
 };
-*/
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+};
 
 var app = {
 
@@ -128,9 +133,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        /* 
-        pushNotification = window.plugins.pushNotification;
 
+        // push notification setup
+        pushNotification = window.plugins.pushNotification;
         if ( device.platform == 'android' || device.platform == 'Android' ) {
             pushNotification.register(
                 pushHandler.successHandler,
@@ -140,6 +145,7 @@ var app = {
                 });
         }
         else {
+         /*
             pushNotification.register(
                 pushHandler.tokenHandler,
                 pushHandler.errorHandler, {
@@ -148,10 +154,19 @@ var app = {
                     "alert":"true",
                     "ecb":"pushHandler.onNotificationAPN"
                 });
+          */
         }
-        */
     },
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    receivedEvent: function(eventName) {
+    },
+    debug: function() {
+        $( ":mobile-pagecontainer" ).pagecontainer( "change", $('#debug'), { role: "dialog" } );
     }
 };
+
+$(function(){
+    if(getParameterByName("debug")) {
+        $('.doDebug').show();
+    }
+});
